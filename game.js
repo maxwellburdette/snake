@@ -4,7 +4,6 @@ import {
 	draw as drawSnake,
 	getSnakeHead,
 	snakeIntersection,
-	score,
 } from "./snake.js";
 import { update as updateFood, draw as drawFood } from "./food.js";
 import { outsideGrid } from "./grid.js";
@@ -30,7 +29,10 @@ function main(currentTime) {
 	draw();
 }
 
-window.requestAnimationFrame(main);
+async function onLoad() {
+	window.requestAnimationFrame(main);
+}
+onLoad();
 
 function update() {
 	updateSnake();
